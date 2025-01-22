@@ -1,0 +1,36 @@
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres_db
+    environment:
+      POSTGRES_DB: timeware_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./data:/var/lib/postgresql/data
+
+  web:
+    image: cruddoyt:latest
+    build: .
+    container_name: api_timeware
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Username=postgres;Password=postgres;Database=timeware_db
+    ports:
+      - "80:80"
+    depends_on:
+      - postgres
+        
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pgadmin_service
+    restart: always
+    depends_on:
+      - postgres
+    ports:
+      - "15432:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com 
+      PGADMIN_DEFAULT_PASSWORD: admin  

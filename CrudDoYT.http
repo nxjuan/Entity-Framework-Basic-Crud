@@ -1,0 +1,6 @@
+@CrudDoYT_HostAddress = http://localhost:5212
+
+GET {{CrudDoYT_HostAddress}}/api/Funcionario
+Accept: application/json
+
+###
