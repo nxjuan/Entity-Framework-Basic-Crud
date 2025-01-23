@@ -12,7 +12,7 @@ public interface IFuncionarioInterface
     
     Task<ServiceResponse<List<FuncionarioModel>>> UpdateFuncionario(FuncionarioModel funcionario);
     
-    Task<ServiceResponse<List<FuncionarioModel>>> DeleteFuncionario(string id);
+    Task<ServiceResponse<FuncionarioModel>> DeleteFuncionario(string id);
     
     Task<ServiceResponse<List<FuncionarioModel>>> InativaFuncionario(string id);
     

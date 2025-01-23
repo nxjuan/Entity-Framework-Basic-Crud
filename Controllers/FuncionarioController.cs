@@ -33,4 +33,22 @@ public class FuncionarioController : ControllerBase
         return Ok( await _funcionarioInterface.CreateFuncionario(novoFuncionario) );
     }
     
+    [HttpPut("{id}")]
+    public async Task<ActionResult<ServiceResponse<List<FuncionarioModel>>>> UpdateFuncionario(FuncionarioModel funcionario)
+    {
+        return Ok( await _funcionarioInterface.UpdateFuncionario(funcionario) );
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<ActionResult<ServiceResponse<FuncionarioModel>>> DeleteFuncionario(string id)
+    {
+        return Ok( await _funcionarioInterface.DeleteFuncionario(id) );
+    }
+
+    [HttpPatch("inativa/{id}")]
+    public async Task<ActionResult<ServiceResponse<FuncionarioModel>>> inativaFuncionario(string id)
+    {
+        return Ok( await _funcionarioInterface.InativaFuncionario(id) );
+    }
+    
 }
