@@ -41,3 +41,10 @@ bld/
 msbuild.log
 msbuild.err
 msbuild.wrn
+
+# Binário e arquivos compilados
+bin/
+obj/
+
+# PostgreSQL data directory (ajuste o caminho se necessário)
+data/
