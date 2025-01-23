@@ -43,8 +43,14 @@ msbuild.err
 msbuild.wrn
 
 # Binário e arquivos compilados
-/bin/
-/obj/
+/bin/**
+/obj/**
 
 # PostgreSQL data directory (ajuste o caminho se necessário)
-/data/
+/data/**
+
+bin/Debug/**
+
+data/base/**
+data/global/**
+data/pg_wal/**
