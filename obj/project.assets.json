@@ -2843,6 +2843,7 @@
       "Microsoft.AspNetCore.OpenApi >= 9.0.1",
       "Microsoft.EntityFrameworkCore >= 9.0.1",
       "Microsoft.EntityFrameworkCore.Design >= 9.0.1",
+      "Microsoft.EntityFrameworkCore.Relational >= 9.0.1",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 9.0.3"
     ]
   },
@@ -2907,6 +2908,10 @@
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
+            "target": "Package",
+            "version": "[9.0.1, )"
+          },
+          "Microsoft.EntityFrameworkCore.Relational": {
             "target": "Package",
             "version": "[9.0.1, )"
           },

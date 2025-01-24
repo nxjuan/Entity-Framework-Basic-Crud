@@ -8,12 +8,12 @@ public interface IFuncionarioInterface
     
     Task<ServiceResponse<List<FuncionarioModel>>> CreateFuncionario(FuncionarioModel novoFuncionario);
     
-    Task<ServiceResponse<FuncionarioModel>> GetFuncionariosById(string id);
+    Task<ServiceResponse<FuncionarioModel>> GetFuncionariosById(Guid id);
     
     Task<ServiceResponse<List<FuncionarioModel>>> UpdateFuncionario(FuncionarioModel funcionario);
     
-    Task<ServiceResponse<FuncionarioModel>> DeleteFuncionario(string id);
+    Task<ServiceResponse<FuncionarioModel>> DeleteFuncionario(Guid id);
     
-    Task<ServiceResponse<List<FuncionarioModel>>> InativaFuncionario(string id);
+    Task<ServiceResponse<List<FuncionarioModel>>> InativaFuncionario(Guid id);
     
 }

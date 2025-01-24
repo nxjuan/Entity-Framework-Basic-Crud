@@ -13,7 +13,17 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.1" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include=".github\assets\" />
+    <Folder Include="Service\BibliotecaService\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include=".github\workflows\workflow.yaml" />
   </ItemGroup>
 
 </Project>

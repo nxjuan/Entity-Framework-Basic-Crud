@@ -22,7 +22,7 @@ public class FuncionarioController : ControllerBase
     }
     
     [HttpGet("{id}")]
-    public async Task<ActionResult<ServiceResponse<FuncionarioModel>>> GetFuncionarioById([FromRoute] string id)
+    public async Task<ActionResult<ServiceResponse<FuncionarioModel>>> GetFuncionarioById([FromRoute] Guid id)
     {
         return Ok( await _funcionarioInterface.GetFuncionariosById(id) );
     }
@@ -40,15 +40,14 @@ public class FuncionarioController : ControllerBase
     }
 
     [HttpDelete("{id}")]
-    public async Task<ActionResult<ServiceResponse<FuncionarioModel>>> DeleteFuncionario(string id)
+    public async Task<ActionResult<ServiceResponse<FuncionarioModel>>> DeleteFuncionario(Guid id)
     {
         return Ok( await _funcionarioInterface.DeleteFuncionario(id) );
     }
 
     [HttpPatch("inativa/{id}")]
-    public async Task<ActionResult<ServiceResponse<FuncionarioModel>>> inativaFuncionario(string id)
+    public async Task<ActionResult<ServiceResponse<FuncionarioModel>>> inativaFuncionario(Guid id)
     {
         return Ok( await _funcionarioInterface.InativaFuncionario(id) );
     }
-    
 }

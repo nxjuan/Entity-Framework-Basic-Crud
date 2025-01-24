@@ -1,0 +1,11 @@
+name: Continious Integration
+
+on: pull_request
+
+jobs: 
+  consinius-integration:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      - name: Using csharp

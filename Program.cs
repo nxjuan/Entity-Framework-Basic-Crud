@@ -10,7 +10,8 @@ builder.Services.AddOpenApi();
 builder.Services.AddScoped<IFuncionarioInterface, FuncionarioService>();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
+        .LogTo(Console.WriteLine, LogLevel.Information);
 });
 
 builder.Services.AddControllers();

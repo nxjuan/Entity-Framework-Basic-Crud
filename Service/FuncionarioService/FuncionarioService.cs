@@ -61,13 +61,13 @@ public class FuncionarioService : IFuncionarioInterface
         return serviceResponse;
     }
 
-    public async Task<ServiceResponse<FuncionarioModel>> GetFuncionariosById(string id)
+    public async Task<ServiceResponse<FuncionarioModel>> GetFuncionariosById(Guid id)
     {
         var serviceResponse = new ServiceResponse<FuncionarioModel>();
 
         try
         {
-            serviceResponse.Dados = await _context.Funcionarios.FirstOrDefaultAsync(x => x.Id == id);;
+            serviceResponse.Dados = await _context.Funcionarios.FirstOrDefaultAsync(x => x.Id == id);
             serviceResponse.Mensagem = "Consulta Realizada com sucesso!";
 
             if (serviceResponse.Dados == null)
@@ -121,7 +121,7 @@ public class FuncionarioService : IFuncionarioInterface
         return serviceResponse;
     }
 
-    public async Task<ServiceResponse<FuncionarioModel>> DeleteFuncionario(string id)
+    public async Task<ServiceResponse<FuncionarioModel>> DeleteFuncionario(Guid id)
     {
         var serviceResponse = new ServiceResponse<FuncionarioModel>();
         try
@@ -148,7 +148,7 @@ public class FuncionarioService : IFuncionarioInterface
         return serviceResponse;
     }
 
-    public async Task<ServiceResponse<List<FuncionarioModel>>> InativaFuncionario(string id)
+    public async Task<ServiceResponse<List<FuncionarioModel>>> InativaFuncionario(Guid id)
     {
         var serviceResponse = new ServiceResponse<List<FuncionarioModel>>();
 

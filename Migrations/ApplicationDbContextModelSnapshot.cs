@@ -22,10 +22,38 @@ namespace CrudDoYT.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("CrudDoYT.Models.Biblioteca.BibliotecaModel", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("CNPJ")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Endereco")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Bibliotecas");
+                });
+
             modelBuilder.Entity("CrudDoYT.Models.FuncionarioModel", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("text");
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
 
                     b.Property<bool>("Ativo")
                         .HasColumnType("boolean");
@@ -53,6 +81,49 @@ namespace CrudDoYT.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Funcionarios");
+                });
+
+            modelBuilder.Entity("CrudDoYT.Models.Livro.LivroModel", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Autor")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Descricao")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Genero")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Titulo")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Livros");
+                });
+
+            modelBuilder.Entity("CrudDoYT.Models.Livro.LivroModel", b =>
+                {
+                    b.HasOne("CrudDoYT.Models.Biblioteca.BibliotecaModel", "Biblioteca")
+                        .WithMany("Livros")
+                        .HasForeignKey("Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Biblioteca");
+                });
+
+            modelBuilder.Entity("CrudDoYT.Models.Biblioteca.BibliotecaModel", b =>
+                {
+                    b.Navigation("Livros");
                 });
 #pragma warning restore 612, 618
         }
