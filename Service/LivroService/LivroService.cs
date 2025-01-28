@@ -11,7 +11,7 @@ public class LivroService : ILivroInterface
 {
     public readonly ApplicationDbContext _context;
 
-    LivroService(ApplicationDbContext context)
+    public LivroService(ApplicationDbContext context)
     {
         _context = context;
     }
@@ -71,6 +71,7 @@ public class LivroService : ILivroInterface
             }
             
             await _context.AddAsync(novoLivro);
+            await _context.SaveChangesAsync();
             serviceResponse.Mensagem = "Livro criado com sucesso!";
             return serviceResponse;
         }

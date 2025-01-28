@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace CrudDoYT.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class LivroController : ControllerBase
 {
     private readonly ILivroInterface _livroInterface;

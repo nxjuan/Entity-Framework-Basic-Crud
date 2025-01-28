@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CrudDoYT")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8c1b624339ca12b483ac4c047720aa809fd43177")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+67a250f673ea20c88d377b3dff71e8df1c35309b")]
 [assembly: System.Reflection.AssemblyProductAttribute("CrudDoYT")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CrudDoYT")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

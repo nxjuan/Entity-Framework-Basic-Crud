@@ -8,7 +8,7 @@ public class FuncionarioModel
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public Guid Id { get; set; }
+    public Guid Id { get; set; } = Guid.NewGuid();
     public String Nome { get; set; }
     public String Sobrenome { get; set; }
     public DepartamentoEnums Departamento { get; set; }

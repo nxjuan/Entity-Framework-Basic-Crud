@@ -93,6 +93,9 @@ namespace CrudDoYT.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<Guid>("BibliotecaId")
+                        .HasColumnType("uuid");
+
                     b.Property<string>("Descricao")
                         .IsRequired()
                         .HasColumnType("text");
