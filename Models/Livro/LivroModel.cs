@@ -15,5 +15,6 @@ public class LivroModel
     public string Genero { get; set; }
     
     public Guid BibliotecaId { get; set; }
+    [ForeignKey("BibliotecaId")]
     public BibliotecaModel? Biblioteca { get; set; }
 }

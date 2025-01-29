@@ -18,7 +18,7 @@ public class ApplicationDbContext : DbContext
         modelBuilder.Entity<LivroModel>()
             .HasOne(b => b.Biblioteca)
             .WithMany(l => l.Livros)
-            .HasForeignKey(l => l.Id);
+            .HasForeignKey(l => l.BibliotecaId);
         
         base.OnModelCreating(modelBuilder);
     }

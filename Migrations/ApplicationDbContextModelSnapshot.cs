@@ -110,6 +110,8 @@ namespace CrudDoYT.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("BibliotecaId");
+
                     b.ToTable("Livros");
                 });
 
@@ -117,7 +119,7 @@ namespace CrudDoYT.Migrations
                 {
                     b.HasOne("CrudDoYT.Models.Biblioteca.BibliotecaModel", "Biblioteca")
                         .WithMany("Livros")
-                        .HasForeignKey("Id")
+                        .HasForeignKey("BibliotecaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

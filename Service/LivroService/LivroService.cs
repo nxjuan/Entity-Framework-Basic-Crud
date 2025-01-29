@@ -77,7 +77,8 @@ public class LivroService : ILivroInterface
         }
         catch (Exception e)
         {
-            serviceResponse.Dados = e.Message;
+            serviceResponse.Mensagem = e.Message;
+            serviceResponse.Dados = null;
             serviceResponse.Sucesso = false;
         }
         return serviceResponse;

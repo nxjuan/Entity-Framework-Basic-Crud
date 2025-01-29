@@ -32,4 +32,5 @@ services:
       - "15432:80"
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@admin.com
-      PGADMIN_DEFAULT_PASSWORD: admin  
+      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_CONFIG_SESSION_TIMEOUT:
