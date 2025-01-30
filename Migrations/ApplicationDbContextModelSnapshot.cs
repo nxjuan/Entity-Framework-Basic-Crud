@@ -115,6 +115,44 @@ namespace CrudDoYT.Migrations
                     b.ToTable("Livros");
                 });
 
+            modelBuilder.Entity("CrudDoYT.Models.Voo.Voo", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("ArrivalTime")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Company")
+                        .HasColumnType("text");
+
+                    b.Property<string>("DepartureTime")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Destination")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Duration")
+                        .HasColumnType("text");
+
+                    b.Property<string>("FlightType")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Origin")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Price")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Seat")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Voos");
+                });
+
             modelBuilder.Entity("CrudDoYT.Models.Livro.LivroModel", b =>
                 {
                     b.HasOne("CrudDoYT.Models.Biblioteca.BibliotecaModel", "Biblioteca")

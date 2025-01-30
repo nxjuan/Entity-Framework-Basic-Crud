@@ -1,4 +1,5 @@
 using CrudDoYT.DataContext;
+using CrudDoYT.Service;
 using CrudDoYT.Service.FuncionarioService;
 using CrudDoYT.Service.LivroService;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ builder.WebHost.UseUrls("http://*:80");
 builder.Services.AddOpenApi();
 builder.Services.AddScoped<IFuncionarioInterface, FuncionarioService>();
 builder.Services.AddScoped<ILivroInterface, LivroService>();
+builder.Services.AddScoped<IVooInterface, VooService>();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
