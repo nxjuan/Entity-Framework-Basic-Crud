@@ -8,7 +8,7 @@ namespace CrudDoYT.Models.Voo
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid Id { get; set; } = Guid.NewGuid();
+        public Guid Id { get; } = Guid.NewGuid();
 
         public string? Company { get; set; }
         public string? Seat { get; set; }
@@ -19,6 +19,7 @@ namespace CrudDoYT.Models.Voo
         public string? Duration { get; set; }
         public string? Price { get; set; }
         public string? FlightType { get; set; }
+        public string? date { get; set; }
 
     }
 }

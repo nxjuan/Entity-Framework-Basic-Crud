@@ -8,14 +8,12 @@ namespace CrudDoYT.Service;
 public class VooService : IVooInterface
 {
     private readonly ApplicationDbContext _context;
-
-    // Construtor do service, que recebe o DbContext (ApplicationDbContext) para interagir com o banco
+    
     public VooService(ApplicationDbContext context)
     {
         _context = context;
     }
-
-    // Implementação do método Create que recebe uma lista de voos
+    
     public async Task<ServiceResponse<string>> Create(Voo[]? voos)
     {
         var serviceResponse = new ServiceResponse<string>();
